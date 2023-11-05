@@ -1,0 +1,305 @@
+:root {
+  --primary: rgb(42, 108, 207);
+  --secondary: rgb(123, 168, 236);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0;
+  overflow: hidden;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav h1 {
+  float: left;
+  margin-left: 20px;
+  color: var(--primary);
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  float: right;
+  display: inline;
+  margin: 0 5px;
+}
+
+nav li a {
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 10%;
+  font-weight: bolder;
+}
+nav li a:hover:not(.active) {
+  background-color: var(--primary);
+  color: white;
+  text-decoration: underline;
+}
+
+.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.active:hover {
+  background-color: var(--secondary);
+  color: black;
+}
+
+/* COMPANY */
+#company {
+  background-image: url("./images/bg.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#company div {
+  text-align: center;
+  width: 70%;
+}
+#company div h1 {
+  color: var(--primary);
+  margin: 20px 0;
+  font-weight: 780;
+}
+
+.btn-comp {
+  text-decoration: none;
+  display: inline-block;
+  background: var(--primary);
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 15px 20px 15px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-comp:hover {
+  background: var(--secondary);
+  color: #203239;
+  text-decoration: none;
+}
+
+/* PROFICIENCY */
+#proficiency {
+  /* background-image: url("./images/topwave.svg"); */
+  /* background-position: top;
+  background-repeat: no-repeat; */
+  height: 100vh;
+  text-align: center;
+}
+
+.section-heading {
+  padding-top: 80px;
+}
+
+.bar {
+  border: 5px solid var(--secondary);
+  border-radius: 5px;
+  width: 500px;
+  margin: auto;
+}
+
+.logo-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.logo {
+  margin-top: 100px;
+}
+
+.logo img {
+  width: 250px;
+  height: 250px;
+  margin: 0 30px;
+}
+
+.logo p {
+  font-weight: 800;
+  font-size: xx-large;
+}
+
+.prof-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.prof-text div {
+  width: 50%;
+}
+
+/* PROJECTS */
+#projects {
+  height: 100vh;
+  text-align: center;
+}
+
+div.scroll-container {
+  width: 80%;
+  background-color: var(--secondary);
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  margin-top: 50px;
+  margin: 50px auto 0 auto;
+  border-style: inset;
+  border-width: thick;
+  border-top-color: var(--primary);
+  border-left-color: var(--primary);
+  border-bottom-color: var(--secondary);
+  border-right-color: var(--secondary);
+}
+
+div.scroll-container img {
+  padding: 10px;
+  height: 500px;
+}
+
+/* TEAMS */
+#teams {
+  height: 100vh;
+  text-align: center;
+}
+div.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+div.card {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  margin: 20px;
+}
+
+div.card img {
+  width: 100%;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.card-text {
+  padding: 0px;
+}
+
+div.card-text h2 {
+  margin-bottom: 20px;
+}
+div.card-text p {
+  margin-bottom: 20px;
+}
+
+/* CONTACT */
+#contact {
+  background-image: url("./images/bg.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#contact div {
+  text-align: center;
+  width: 70%;
+}
+#contact div h1 {
+  color: var(--primary);
+  margin: 20px 0;
+  font-weight: 780;
+}
+
+/* RESPONSIVE IMAGE */
+@media only screen and (max-width: 700px) {
+  .bar {
+    width: 80%;
+  }
+
+  /* NAVBAR */
+  nav li a:not(.active) {
+    display: none;
+  }
+
+  /* COMPANY */
+  #company div {
+    text-align: center;
+    width: 90%;
+  }
+
+  #proficiency {
+    height: fit-content;
+  }
+
+  .logo {
+    width: 30%;
+  }
+  .logo img {
+    width: 100%;
+    height: 150px;
+    margin: 0;
+  }
+
+  .logo p {
+    font-size: small;
+  }
+  .prof-text div {
+    width: 100%;
+  }
+  /* PROJECTS */
+  div.scroll-container {
+    width: 90%;
+  }
+
+  /* TEAMS */
+  #teams {
+    height: fit-content;
+  }
+  #contact div {
+    text-align: center;
+    width: 90%;
+  }
+}
