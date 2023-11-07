@@ -29,6 +29,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index:5;
 }
 
 nav h1 {
@@ -73,17 +74,33 @@ nav li a:hover:not(.active) {
 
 /* COMPANY */
 #company {
-  background-image: url("./images/bg.jpg");
+  background-image: url("./images/background.jpg");
   background-position: bottom;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
+  background-attachment:fixed;
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.company .jumbrotron{
+  position:relative;
+  z-index:1;
+}
+.company::after{
+  content:'';
+  display:block;
+  width:100%;
+  height:100vh;
+  background-image:linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+  position:absolute;
+  z-index:0;
+}
+.company p {
+  color:white;
+}
 #company div {
   text-align: center;
   width: 70%;
@@ -207,6 +224,8 @@ div.card-container {
 div.card {
   width: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:1px solid #000000;
+  border-radius:15px;
   text-align: center;
   margin: 20px;
 }
@@ -216,14 +235,23 @@ div.card img {
   height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius:15px;
+  border-bottom:1px solid #000000;
 }
 
 div.card-text {
+  margin-top:10px;
   padding: 0px;
 }
-
+.bars{
+  display:inline-block;
+  width:100px;
+  height:5px;
+  background:#000000;
+  border-radius:3px;
+}
 div.card-text h2 {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 div.card-text p {
   margin-bottom: 20px;
@@ -252,7 +280,66 @@ div.card-text p {
   margin: 20px 0;
   font-weight: 780;
 }
-
+/* from */
+.page-contact{
+  background-image: url("./images/bg.jpg");
+}
+.contact{
+  width: 70%;
+  height:360px;
+  background:white;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:15px;
+  display:flex;
+  flex-direction:column;
+  margin-top:100px;
+  border:1px solid #000000;
+  padding:10px;
+  box-shadow: 5px 7px 35px black;
+}
+.contact h1{
+  text-align:center;
+  text-transform : capitalize;
+}
+.head-form{
+  margin:10px 0;
+}
+input[type=text],input[type=email],input[type=tel], select {
+  width: 96%;
+  padding: 12px 20px;
+  margin: 8px 20px;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border:none;
+  border-bottom:3px solid black;
+}
+.btn{
+  display:flex;
+  justify-content:space-around;
+}
+/* response */
+.card-response{
+  display:flex;
+  flex-direction:column;
+  width:50%;
+  height:150px;
+  background-color:var(--primary);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:200px;
+  border-radius:15px;
+  border:1px solid #000000;
+  text-align:center;
+  /* box-shadow: 10px 10px 10px #000000; */
+  box-shadow: 5px 7px 35px black;
+}
+.head-response{
+  margin-top:35px;
+  color:white;
+  font-size:32px;
+}
 /* RESPONSIVE IMAGE */
 @media only screen and (max-width: 700px) {
   .bar {
@@ -302,4 +389,20 @@ div.card-text p {
     text-align: center;
     width: 90%;
   }
+}
+@media screen and (max-width:660px){
+  .contact{
+    width:85%;
+    height:450px;
+  }
+  input[type=text],input[type=email],input[type=tel], select{
+    margin-top:20px;
+    height:50px;
+    margin-left: 8px;
+  }
+  .card-response{
+    width:90%;
+    height:160px;
+  }
+
 }
