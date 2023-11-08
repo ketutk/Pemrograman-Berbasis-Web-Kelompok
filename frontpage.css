@@ -36,6 +36,7 @@ nav h1 {
   float: left;
   margin-left: 20px;
   color: var(--primary);
+  font-size: xx-large;
 }
 
 nav ul {
